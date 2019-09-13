@@ -24,15 +24,32 @@ In this challenge, create a web page that presents a styled list of Star Wars ch
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
+- [x] What is React JS and what problems does it try and solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
-- [ ] What does it mean to _think_ in react?
+React is a User Interface Component Library built on Javascript.  It uses a new markup language called JSX which looks like a cross between HTML and Javascript.  
+React was made to solve the problem of there being a lot of pressure on browsers when it comes to displays of user interfaces by creating a virtual DOM.  The web demands more interconnectivity and responsiveness.  The virtual DOM mean info can be updated without refreshing the browser.  The way React is designed, it also helps with improving scalability of projects by making components easily scalable and reusable.
 
-- [ ] Describe state.
+- [x] What does it mean to _think_ in react?
 
-- [ ] Describe props.
+To me, that means you need to think inside-out and upside-down. 
+It’s similar to thinking in Flexbox, in that you have to think of terms of the design of your components, their siblings and parents before you build.  You need to have a good idea of how each part is related to each other.
+Like with Javascript, you want to make sure you have a ‘daisy-chain’-like structure where you are passing information from the component, to a link reference, to a function, etc. 
+An important part of React is to decipher the minimal representation of ‘state’ and work out where it should live in your UI.
 
-- [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
+- [x] Describe state.
+
+State is the data that components hold onto and pass around to other components.  For example, in some UI the state would be the data that the user puts in.    You can recognise state when it is a piece of information that can change over time, it isn’t passed in from a parent and can’t be computed using components already existing in the UI.  State is the data we have when we need it eg. search text entered by a user.
+
+- [x] Describe props.
+
+Props (short for properties) is the means in which we pass state from one component to another.  
+State could be changed every second, like when a user types in a search bar.
+But props, once entered via state, cannot be changed.
+This information is passed around to functional components and classes.  We can create different styles for display of props via classNames.  We can also define ‘defaultProps’ as a default style.
+
+- [x] What are side effects, and how do you sync effects in a React component to state or prop changes?
+
+A side effect is anything that affects something outside the scope of the function eg. timers, console logs, etc.  We use "useEffect" as an instruction a component needs to run a side effect. It can be prompted any time state changes, run only once after state changes, or it can be queued to run when the state of a dependency array changes.
 
 ## Project Set Up
 
