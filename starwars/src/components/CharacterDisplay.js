@@ -12,6 +12,10 @@ const StyledH2 = styled.h2`
   font-size: 16px;
   color: brown;`
 
+const StyledH3 = styled.h3`
+  font-size: 14px;
+  color: black;`
+
 const StyledDisplay = styled.div`
   background-color: rgb(252, 182, 121);
   opacity: .5;
@@ -31,7 +35,8 @@ function CharacterDisplay(props) {
   return (
     <StyledDisplay>
       <StyledH1>{characterData.name}</StyledH1>
-      <StyledH2>Hair: {characterData.hair_color}</StyledH2>
+      <StyledH2>Hair: {characterData.hair_color} Skin: {characterData.skin_color} Eyes: {characterData.eye_color}</StyledH2>
+      <StyledH3>Birth Year: {characterData.birth_year}</StyledH3>
     </StyledDisplay>
   )
 }
