@@ -1,7 +1,27 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import './App.css';
+import CharacterList from './components/CharacterList';
 
-const App = () => {
+
+function App() {
+
+  const [list, setList] = useState({
+    characters: []
+  });
+
+  useEffect(() => {
+    axios.get('https://swapi.co/api/people/')
+      .then((response) => {
+      // console.log(response.data);
+      setList({characters: response.data.results});
+      // console.log(list);
+    })
+      .catch((error) => {
+        console.log(`API error: ${error.message}`);
+      })
+  }, [])
+
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -12,6 +32,7 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <CharacterList characters={list.characters}/>
     </div>
   );
 }

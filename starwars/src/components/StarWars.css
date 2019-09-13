@@ -1,0 +1,13 @@
+.character-list {
+  margin: 0 auto;
+  display: flex;
+  width: 90vw;
+  border: 1px solid red;
+  margin: 10px;
+}
+
+.character-display {
+  width: 10vw;
+  margin: 10px;
+  border: 1px solid blue;
+}
